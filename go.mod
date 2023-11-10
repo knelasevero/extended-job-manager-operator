@@ -14,6 +14,7 @@ require (
 	k8s.io/client-go v0.28.3
 	k8s.io/code-generator v0.28.2
 	k8s.io/klog v1.0.0
+	k8s.io/klog/v2 v2.100.1
 	sigs.k8s.io/controller-tools v0.13.0
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3
 )
@@ -112,7 +113,6 @@ require (
 	k8s.io/apiserver v0.28.3 // indirect
 	k8s.io/component-base v0.28.3 // indirect
 	k8s.io/gengo v0.0.0-20220902162205-c0856e24416d // indirect
-	k8s.io/klog/v2 v2.100.1 // indirect
 	k8s.io/kms v0.28.3 // indirect
 	k8s.io/kube-aggregator v0.28.2 // indirect
 	k8s.io/kube-openapi v0.0.0-20230717233707-2695361300d9 // indirect
