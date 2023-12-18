@@ -1,0 +1,13 @@
+FROM registry.ci.openshift.org/ocp/builder:rhel-8-golang-1.20-openshift-4.14 AS builder
+WORKDIR /go/src/github.com/openshift/extended-job-manager-operator
+COPY . .
+
+FROM registry.ci.openshift.org/ocp/builder:rhel-8-base-openshift-4.14
+COPY --from=builder /go/src/github.com/openshift/extended-job-manager-operator/manifests /manifests
+COPY --from=builder /go/src/github.com/openshift/extended-job-manager-operator/metadata /metadata
+
+LABEL io.k8s.display-name="OpenShift extended-job-manager Operator metadata" \
+      io.k8s.description="This is a component of OpenShift and manages the extended job manager (kueue)" \
+      io.openshift.tags="openshift,extended-job-manager-operator,metadata" \
+      com.redhat.delivery.appregistry=true \
+      maintainer="AOS workloads team, <aos-workloads@redhat.com>"
